@@ -1,0 +1,39 @@
+// calculate frequency
+#include<iostream>
+#include<string.h>
+#include<stdio.h>
+using namespace std;
+int main ()
+{
+    char ch[100], c;
+    int freq=0;
+    cout<<" enter character\n";
+   cin.getline(ch,100);
+    int l=strlen(ch);
+    cout<<"\n character :\t frequency";
+    for(int i=0;i<l;i++)
+    {
+        c=ch[i];
+        for(int j=0;j<l;j++ )
+        {
+            if(c==ch[j])
+            {
+                freq++;
+                for(int k=j;k<l-1;k++)
+                ch[k]=ch[k+1];
+                l--;
+                ch[l]='\0';
+                j--;
+
+            }
+        }
+        cout<<endl<<c<<"\t\t "<<freq;
+        freq=0;
+        i--;
+
+    }
+    cout<<endl;
+    return 0;
+    
+
+}
